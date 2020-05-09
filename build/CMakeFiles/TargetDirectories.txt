@@ -1,0 +1,3 @@
+/media/loay/01D2DFE27821A700/STM32/cpp_course/Projects/CppND-Memory-Management-Chatbot/build/CMakeFiles/rebuild_cache.dir
+/media/loay/01D2DFE27821A700/STM32/cpp_course/Projects/CppND-Memory-Management-Chatbot/build/CMakeFiles/membot.dir
+/media/loay/01D2DFE27821A700/STM32/cpp_course/Projects/CppND-Memory-Management-Chatbot/build/CMakeFiles/edit_cache.dir

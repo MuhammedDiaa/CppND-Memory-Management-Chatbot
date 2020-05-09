@@ -111,6 +111,8 @@ string
 -
 chatbot.h
 /media/loay/01D2DFE27821A700/STM32/cpp_course/Projects/CppND-Memory-Management-Chatbot/src/chatbot.h
+memory
+-
 
 /usr/include/wx-3.0/wx/accel.h
 wx/defs.h

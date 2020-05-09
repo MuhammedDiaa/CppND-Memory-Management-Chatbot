@@ -17,7 +17,7 @@ private:
     //// STUDENT CODE
     ////
 
-    //ChatLogic *_chatLogic; #M
+    
     std::unique_ptr<ChatLogic> _chatLogic ; 
 
     ////
@@ -28,8 +28,7 @@ public:
     ChatBotPanelDialog(wxWindow *parent, wxWindowID id);
     ~ChatBotPanelDialog();
 
-    // getter / setter #M
-    //ChatLogic *GetChatLogicHandle() { return _chatLogic.get(); }
+    // getter / setter 
     std::unique_ptr<ChatLogic> &GetChatLogicHandle() { return _chatLogic; } 
 
     // events

@@ -45,7 +45,74 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
+    ChatBot::ChatBot( const ChatBot &source) //copy constructor 
+    {
+        std::cout<<"ChatBot Copy Constructor" <<std::endl ; 
+        
+        this->_image = new wxBitmap(source._image->ConvertToImage());
+        
+        this->_currentNode = source._currentNode;
+        this->_rootNode = source._rootNode;
+        this->_chatLogic=source._chatLogic;
 
+    }
+    ChatBot::ChatBot( ChatBot &&source)  //move constructor 
+    {
+        std::cout<<"ChatBot Move Constructor" <<std::endl ;
+        //stealing source resources
+        this->_image = source._image ;  
+        this->_currentNode = source._currentNode;
+        this->_rootNode = source._rootNode;
+        this->_chatLogic=source._chatLogic;
+
+        _chatLogic->SetChatbotHandle(this);
+        //invalidating source resources
+        source._image = NULL ; 
+        source._currentNode = nullptr ; 
+        source._rootNode =nullptr ;
+        source._chatLogic =nullptr ; 
+    }
+    ChatBot &ChatBot::operator=(const ChatBot &source) //copy assignement operator 
+    {
+        if (this == &source) {
+        return *this ;
+        }
+        std::cout<<"ChatBot Copy Assignment Operator" <<std::endl ; 
+
+
+        
+        this->_image = new wxBitmap(source._image->ConvertToImage());
+
+        this->_currentNode = source._currentNode;
+        this->_rootNode = source._rootNode;
+        this->_chatLogic=source._chatLogic;
+
+
+        return *this ;
+
+
+    }
+    ChatBot &ChatBot::operator=( ChatBot &&source) //move assignement operator 
+    {
+        std::cout<<"ChatBot Move Assignment Operator" <<std::endl ; 
+        if (this == &source) {
+                return *this ;
+        }
+        //stealing source resources
+        delete _image ; 
+        this->_image = source._image ;  
+        this->_currentNode = source._currentNode;
+        this->_rootNode = source._rootNode;
+        this->_chatLogic=source._chatLogic;
+
+        _chatLogic->SetChatbotHandle(this);
+        //invalidating source resources
+        source._image = NULL ; 
+        source._currentNode = nullptr ; 
+        source._rootNode =nullptr ;
+        source._chatLogic =nullptr ; 
+        return *this ;
+    }
 ////
 //// EOF STUDENT CODE
 
